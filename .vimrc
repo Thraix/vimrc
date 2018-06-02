@@ -19,6 +19,8 @@ Plugin 'vim-syntastic/syntastic'
 
 Plugin 'tihomirov/vim-glsl'
 
+Plugin 'Valloric/YouCompleteMe'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -58,7 +60,9 @@ set background=dark
 set t_Co=256
 "colorscheme darkblue
 
-colorscheme solarized
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+colorscheme solarized 
 
 set number
 set relativenumber
