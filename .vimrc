@@ -17,9 +17,11 @@ Plugin 'prettier/vim-prettier'
 
 Plugin 'vim-syntastic/syntastic'
 
-Plugin 'tihomirov/vim-glsl'
+Plugin 'tikhomirov/vim-glsl'
 
 Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'chrisbra/Colorizer'
 
 call vundle#end()
 filetype plugin indent on
@@ -71,10 +73,12 @@ noremap S :call SwitchSourceHeader()<CR>
 
 set comments=sl:/*,mb:\ *,elx:\ */
 
-map <C-h> :tabp<CR>
-map <C-l> :tabn<CR>
-map <C-k> :m .-2<CR>==
-map <C-j> :m .+1<CR>==
+noremap <C-h> :tabp<CR>
+noremap <C-l> :tabn<CR>
+noremap <C-k> :m .-2<CR>==
+noremap <C-j> :m .+1<CR>==
+noremap <C-b> :tabm -1<CR>
+noremap <C-n> :tabm +1<CR>
 map <F12> :!make<CR>
 noremap <S-tab> gg=G''
 noremap <C-G> :YcmCompleter GoTo<CR>
@@ -122,6 +126,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/plugin/YouCompleteMe/third_party/ycmd/
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_goto_buffer_command="new-or-existing-tab"
 let g:javascript_plugin_jsdoc = 1
 
 set statusline+=%#warningmsg#
